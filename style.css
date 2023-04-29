@@ -129,13 +129,13 @@ input, button {
 .key_enter {
     width: 157px;
     height: 68px;
-    background: url(assets/images/enter.png)  #ABC6DC;
+    background: url(assets/images/enter.png)  #a4d6ff;
     color: #ffffff;
     font-size: 15px;
 }
 
-.key_shift-left {
-    background: url(assets/images/enter.png) #A8A8A6;
+.key_shift {
+    background: url(assets/images/shift.png) #A8A8A6;
     width: 138px;
     height: 68px;
     color: #ffffff;
@@ -163,7 +163,7 @@ input, button {
 }
 
 .key_win {
-    background: url(assets/images/ctrl.png) #629990;
+    background: url(assets/images/win.png) #629990;
     width: 66px;
     height: 68px;
     color: #ffffff;
@@ -181,7 +181,7 @@ input, button {
 .key_space {
     width: 436px;
     height: 68px;
-    background: url(assets/images/space.png) #ABC6DC;
+    background: url(assets/images/space.png) #a4d6ff;
 }
 
 .nav-btns {
@@ -208,9 +208,6 @@ input, button {
 
 .key_active {
     background-color: #0A74CA;
-}
-
-.key_active > p {
     color: #FFFFFF;
 }
 
