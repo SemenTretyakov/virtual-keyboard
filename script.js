@@ -19,7 +19,7 @@ body.prepend(container);
 container.prepend(sectionTitle, textarea, keyboardWrapper);
 
 
-const keyboard = ['`', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '-', '=', 'Backspace', 'Tab', 'q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p', '[', ']', '\\', 'CapsLock', 'a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l', ';', "'", 'Enter', 'Shift', 'z', 'x', 'c', 'v', 'b', 'n', 'm', ',', '.', '/', 'ArrowUp', 'Shift', 'Control', 'Alt', ' ', 'Alt', 'Control', 'ArrowLeft', 'ArrowDown', 'ArrowRight', 'Meta',];
+const keyboard = ['`', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '-', '=', 'Backspace', 'Tab', 'q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p', '[', ']', '\\', 'CapsLock', 'a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l', ';', "'", 'Enter', 'ShiftLeft', 'z', 'x', 'c', 'v', 'b', 'n', 'm', ',', '.', '/', 'ArrowUp', 'ShiftRight', 'ControlLeft', 'AltLeft', ' ', 'AltRight', 'ControlRight', 'ArrowLeft', 'ArrowDown', 'ArrowRight', 'MetaLeft',];
 const keyboardUp = keyboard.map((letter) => {
     if (letter.length <= 1) {
         return letter.toUpperCase()
@@ -61,15 +61,17 @@ keyboardUp.forEach((key) => {
         keyElement.classList.add('key_caps');
     } else if (key === 'Enter') {
         keyElement.classList.add('key_enter');
-    } else if (key === 'Shift') {
+    } else if (key === 'ShiftLeft' || key === 'ShiftRight') {
         keyElement.classList.add('key_shift');
-    } else if (key === 'Control') {
+        keyElement.textContent = 'Shift';
+    } else if (key === 'ControlLeft' || key === 'ControlRight') {
         keyElement.classList.add('key_ctrl');
         keyElement.textContent = 'Ctrl';
-    } else if (key === 'Meta') {
+    } else if (key === 'MetaLeft') {
         keyElement.classList.add('key_win');
         keyElement.textContent = 'Win';
-    } else if (key === 'Alt') {
+    } else if (key === 'AltLeft' || key === 'AltRight') {
+        keyElement.textContent = 'Alt';
         keyElement.classList.add('key_alt');
     }
     keyboardWrapper.appendChild(keyElement);
@@ -132,6 +134,13 @@ keys.forEach((btn) => {
         const { target } = event;
         const targetClos = target.closest('.key');
         targetClos.classList.add('key_active');
-        text_input.append(targetClos.textContent);
+        if (targetClos.textContent !== 'Backspace') {
+            text_input.append(targetClos.textContent);
+        }
+        if (targetClos.textContent === 'Backspace') {
+            const text = text_input.value;
+            text_input.value = text.substring(0, text.length - 1);
+            console.log(targetClos)
+        }
     })
 })
