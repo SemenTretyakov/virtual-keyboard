@@ -76,13 +76,7 @@ input, button {
     border-radius: 5.67px;
 }
 
-.key-row {
-    display: flex;
-    column-gap: 4px;
-}
-
 .key {
-    position: relative;
     background: url(assets/images/grey-frame.png) #E1D8CD;
     width: 68px;
     height: 68px;
@@ -142,12 +136,6 @@ input, button {
     font-size: 15px;
 }
 
-/* .key_shift-right {
-    background: url(assets/images/shift.png) #a6a7a8;
-    width: 191px;
-    height: 68px;
-} */
-
 .key_nav {
     background: url(assets/images/grey-frame.png) #E86700;
     color: #ffffff;
@@ -192,23 +180,11 @@ input, button {
     font-size: 15px;
 }
 
-/* .key_mini {
-    width: 68px;
-    height: 32px;
-    background: url(assets/images/nav_mini.png) #E86700;
-} */
-
-.key__text_up {
-    top: 15%;
-}
-
-.key__text_down {
-    top: 48%;
-}
-
 .key_active {
     background-color: #0A74CA;
     color: #FFFFFF;
+    border-radius: 12px;
+    transition: all 0.2s ease;
 }
 
 .key_nav__text {
@@ -216,12 +192,4 @@ input, button {
     color: #ffffff;
     top: 50%;
     transform: translateY(-50%);
-
-}
-
-.key_nav-mini__text {
-    left: 50%;
-    transform: translateX(-50%);
-    top: 20%;
-    color: #ffffff;
 }

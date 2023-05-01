@@ -134,13 +134,13 @@ keys.forEach((btn) => {
         const { target } = event;
         const targetClos = target.closest('.key');
         targetClos.classList.add('key_active');
-        if (targetClos.textContent !== 'Backspace') {
+        if (targetClos.textContent !== 'Backspace' || targetClos.textContent !== 'Tab') {
             text_input.append(targetClos.textContent);
         }
         if (targetClos.textContent === 'Backspace') {
             const text = text_input.value;
             text_input.value = text.substring(0, text.length - 1);
-            console.log(targetClos)
         }
     })
 })
+
