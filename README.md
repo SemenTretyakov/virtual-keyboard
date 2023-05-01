@@ -1,1 +1,1 @@
-# https://SemenTretyakov.github.io/virtual-keyboard
+https://SemenTretyakov.github.io/virtual-keyboard/index.html
