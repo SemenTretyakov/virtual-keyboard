@@ -183,8 +183,8 @@ input, button {
 .key_active {
     background-color: #0A74CA;
     color: #FFFFFF;
-    border-radius: 12px;
-    transition: all 0.2s ease;
+    border-radius: 15px;
+    transition: all 0.085s ease;
 }
 
 .key_nav__text {
@@ -192,4 +192,12 @@ input, button {
     color: #ffffff;
     top: 50%;
     transform: translateY(-50%);
+}
+
+.text-info {
+    font-family: 'Helvetica';
+    font-weight: 400;
+    font-size: 20px;
+    color: #1a1a1a;
+    margin-top: 15px;
 }
